@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Verify Job | AI Fake Job Detector</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h2>AI Fake Job Detector</h2>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/verify">Verify Job</a>
+        </nav>
+    </header>
+
+    <main class="form-container">
+
+        <h1>Verify a Job Posting</h1>
+
+        <p>Enter the job details below to analyse its authenticity.</p>
+
+        <form action="/verify" method="POST">
+
+            <label>Job Title *</label>
+            <input type="text" name="title" placeholder="Example: Software Developer" required>
+
+            <label>Company Location</label>
+            <input type="text" name="location" placeholder="Example: Bangalore, India">
+
+            <label>Salary Range</label>
+            <input type="text" name="salary_range" placeholder="Example: 3-5 LPA">
+
+            <label>Company Profile</label>
+            <textarea name="company_profile" placeholder="Describe the company..."></textarea>
+
+            <label>Job Description *</label>
+            <textarea name="description" placeholder="Enter the complete job description..." required></textarea>
+
+            <label>Job Requirements</label>
+            <textarea name="requirements" placeholder="Enter required skills and qualifications..."></textarea>
+
+            <label>Benefits</label>
+            <textarea name="benefits" placeholder="Enter job benefits..."></textarea>
+
+            <label>Employment Type</label>
+            <select name="employment_type">
+                <option value="">Select Employment Type</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time</option>
+                <option value="Contract">Contract</option>
+                <option value="Internship">Internship</option>
+                <option value="Temporary">Temporary</option>
+            </select>
+
+            <label>Required Experience</label>
+            <select name="experience">
+                <option value="">Select Experience</option>
+                <option value="Internship">Internship</option>
+                <option value="Entry level">Entry Level</option>
+                <option value="Mid-Senior level">Mid-Senior Level</option>
+                <option value="Associate">Associate</option>
+                <option value="Executive">Executive</option>
+            </select>
+
+            <label>Required Education</label>
+            <select name="education">
+                <option value="">Select Education</option>
+                <option value="High School">High School</option>
+                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                <option value="Master's Degree">Master's Degree</option>
+                <option value="PhD">PhD</option>
+                <option value="Unspecified">Unspecified</option>
+            </select>
+
+            <button type="submit">Analyse Job Posting</button>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>
